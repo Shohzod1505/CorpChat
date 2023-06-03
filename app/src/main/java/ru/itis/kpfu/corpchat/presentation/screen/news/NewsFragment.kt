@@ -1,4 +1,4 @@
-package ru.itis.kpfu.corpchat.presentation.screen;
+package ru.itis.kpfu.corpchat.presentation.screen.news;
 
 import android.os.Bundle
 import android.view.View
