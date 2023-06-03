@@ -1,0 +1,53 @@
+<resources>
+
+    <!--Button-->
+    <string name="bt_done">Готово</string>
+    <string name="bt_next_step">Далее</string>
+    <string name="bt_sign_in">Войти</string>
+
+    <!--Label_Auth-->
+    <string name="auth_user">Пользователь</string>
+    <string name="auth_company">Компания</string>
+    <string name="auth_exist">Уже есть аккаунт</string>
+    <string name="auth_title_user_sign_up">Введите вашу рабочую почту</string>
+    <string name="auth_title_user_sign_in">Добро пожаловать!</string>
+    <string name="auth_title_company_sign_up_name">Создайте свою компанию</string>
+    <string name="auth_title_company_sign_up_industry">Выберите сферу деятельности</string>
+    <string name="auth_title_company_sign_up_logo">Добавить логотип</string>
+    <string name="auth_title_company_sign_in">Вы админ компании</string>
+    <string name="auth_name">Название</string>
+    <string name="auth_address">Адрес</string>
+    <string name="auth_phone">Номер телефона</string>
+    <string name="auth_login">Логин</string>
+    <string name="auth_password">Пароль</string>
+    <string name="auth_hint_user_code">" Мы вышлем вам логин и пароль"</string>
+    <string name="auth_hint_company_code">Мы вышлем логин и пароль админа на этот телефон</string>
+
+    <!--Label_News-->
+    <!--Label_Work-->
+    <!--Label_Chat-->
+
+    <!--Label_Profile-->
+    <string name="profile_phone_change">Сменить номер</string>
+    <string name="profile_bio_change">Сменить описание</string>
+    <string name="profile_name">Фамилия Имя</string>
+    <string name="profile_status">онлайн</string>
+    <string name="profile_position">Должность</string>
+    <string name="profile_account">Аккаунт</string>
+    <string name="profile_settings">Настройки</string>
+    <string name="profile_help">Помощь</string>
+    <string name="profile_about">Обо мне</string>
+    <string name="profile_chat">Настройки чата</string>
+    <string name="profile_privacy">Приватность и безопасность</string>
+    <string name="profile_notification">Уведомления</string>
+    <string name="profile_language">Язык</string>
+    <string name="profile_language_ex">Русский</string>
+    <string name="profile_support">Поддержка</string>
+    <string name="profile_app">О приложении</string>
+    <string name="profile_phone">Номер телефона</string>
+    <string name="profile_hint_phone">Нажать для смены номера</string>
+    <string name="profile_hint_bio">Описание</string>
+    <string name="profile_hint_phone_change">" Ваш новый номер получит код подтверждения через SMS"</string>
+    <string name="profile_hint_bio_change">" Можно добавить несколько строк о себе. Любой, кто откроет ваш профиль, увидит этот текст"</string>
+
+</resources>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name" translatable="false">CorpChat</string>
+
+    <!--Button-->
+    <string name="bt_done">Done</string>
+    <string name="bt_next_step">Next step</string>
+    <string name="bt_sign_in">Sign in</string>
+
+    <!--Label_Auth-->
+    <string name="auth_user">User</string>
+    <string name="auth_company">Company</string>
+    <string name="auth_exist">Already have an account</string>
+    <string name="auth_title_user_sign_up">Enter your work e-mail</string>
+    <string name="auth_title_user_sign_in">Welcome!</string>
+    <string name="auth_title_company_sign_up_name">Set up your company</string>
+    <string name="auth_title_company_sign_up_industry">Select industry</string>
+    <string name="auth_title_company_sign_up_logo">Add a logo</string>
+    <string name="auth_title_company_sign_in">You are the admin of company</string>
+    <string name="auth_email" translatable="false">E-mail</string>
+    <string name="auth_name">Name</string>
+    <string name="auth_address">Address</string>
+    <string name="auth_phone">Phone</string>
+    <string name="auth_login">Login</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_hint_user_code">We will send login and password to you</string>
+    <string name="auth_hint_company_code">We will send admin login and password to this phone</string>
+
+    <!--Label_News-->
+    <!--Label_Work-->
+    <!--Label_Chat-->
+
+    <!--Label_Profile-->
+    <string name="profile_phone_change">Change number</string>
+    <string name="profile_bio_change">Change bio</string>
+    <string name="profile_name">Last name Name</string>
+    <string name="profile_status">online</string>
+    <string name="profile_position">Position</string>
+    <string name="profile_account">Account</string>
+    <string name="profile_settings">Settings</string>
+    <string name="profile_help">Help</string>
+    <string name="profile_number_ex" translatable="false">+7 (999) 999–99–99</string>
+    <string name="profile_about">About me</string>
+    <string name="profile_chat">Chat Settings</string>
+    <string name="profile_privacy">Privacy and Security</string>
+    <string name="profile_notification">Notifications</string>
+    <string name="profile_language">Language</string>
+    <string name="profile_language_ex">English</string>
+    <string name="profile_support">Support</string>
+    <string name="profile_app">About app</string>
+    <string name="profile_phone">Phone number</string>
+    <string name="profile_hint_phone">Tap to change phone number</string>
+    <string name="profile_hint_bio">Bio</string>
+    <string name="profile_hint_phone_change">Your new number will receive a confirmation code via SMS</string>
+    <string name="profile_hint_bio_change">You can add a few lines about yourself. Anyone who opens your profile will see this text</string>
+
+
+</resources>
