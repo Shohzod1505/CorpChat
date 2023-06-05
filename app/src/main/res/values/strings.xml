@@ -4,26 +4,42 @@
     <!--Button-->
     <string name="bt_done">Done</string>
     <string name="bt_next_step">Next step</string>
-    <string name="bt_sign_in">Sign in</string>
+    <string name="bt_sign_in">Sign In</string>
 
     <!--Label_Auth-->
     <string name="auth_user">User</string>
     <string name="auth_company">Company</string>
     <string name="auth_exist">Already have an account</string>
-    <string name="auth_title_user_sign_up">Enter your work e-mail</string>
-    <string name="auth_title_user_sign_in">Welcome!</string>
-    <string name="auth_title_company_sign_up_name">Set up your company</string>
-    <string name="auth_title_company_sign_up_industry">Select industry</string>
-    <string name="auth_title_company_sign_up_logo">Add a logo</string>
     <string name="auth_title_company_sign_in">You are the admin of company</string>
+    <string name="auth_title_user_sign_in">You are the slave of company</string>
+    <string name="auth_title_exist_sign_in">Enter into your account</string>
+    <string name="auth_title_company_sign_up_name">Set up your company</string>
+    <string name="auth_title_user_sign_up_name">Fill information about yourself</string>
+    <string name="auth_title_company_sign_up_industry">Select industry</string>
+    <string name="auth_title_sign_up_logo">Add a logo</string>
+    <string name="auth_title_sign_up_profile">Add a profile photo</string>
+
     <string name="auth_email" translatable="false">E-mail</string>
     <string name="auth_name">Name</string>
+    <string name="auth_last_name">Last name</string>
     <string name="auth_address">Address</string>
     <string name="auth_phone">Phone</string>
-    <string name="auth_login">Login</string>
     <string name="auth_password">Password</string>
-    <string name="auth_hint_user_code">We will send login and password to you</string>
-    <string name="auth_hint_company_code">We will send admin login and password to this phone</string>
+
+    <string name="auth_industry_1" translatable="false">Industry #1</string>
+    <string name="auth_industry_2" translatable="false">Industry #2</string>
+    <string name="auth_industry_3" translatable="false">Industry #3</string>
+    <string name="auth_industry_4" translatable="false">Industry #4</string>
+    <string name="auth_industry_5" translatable="false">Industry #5</string>
+    <string name="auth_industry_6" translatable="false">Industry #6</string>
+    <string name="auth_industry_7" translatable="false">Industry #7</string>
+    <string name="auth_industry_8" translatable="false">Industry #8</string>
+    <string name="auth_industry_9" translatable="false">Industry #9</string>
+    <string name="auth_industry_10" translatable="false">Industry #10</string>
+    <string name="auth_industry_11" translatable="false">Industry #11</string>
+    <string name="auth_industry_12" translatable="false">Industry #12</string>
+    <string name="auth_industry_13" translatable="false">Industry #13</string>
+    <string name="auth_industry_14" translatable="false">Industry #14</string>
 
     <!--Label_News-->
     <!--Label_Work-->

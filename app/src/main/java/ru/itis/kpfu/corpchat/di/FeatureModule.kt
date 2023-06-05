@@ -2,38 +2,36 @@ package ru.itis.kpfu.corpchat.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.industry.AuthCompanySignUpIndustryFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.industry.AuthCompanySignUpIndustryModule
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.logo.AuthCompanySignUpLogoFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.logo.AuthCompanySignUpLogoModule
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.name.AuthCompanySignUpNameFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.company.name.AuthCompanySignUpNameModule
-import ru.itis.kpfu.corpchat.presentation.screen.auth.enter.AuthEnterFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.enter.AuthEnterModule
-import ru.itis.kpfu.corpchat.presentation.screen.auth.signin.AuthSignInFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.signin.AuthSignInModule
-import ru.itis.kpfu.corpchat.presentation.screen.auth.user.AuthUserSignUpFragment
-import ru.itis.kpfu.corpchat.presentation.screen.auth.user.AuthUserSignUpModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.list.ChatChannelListFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.list.ChatChannelListModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.message.ChatChannelMessageFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.message.ChatChannelMessageModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.contact.ChatContactListFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.contact.ChatContactListModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.group.list.ChatGroupListFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.group.list.ChatGroupListModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.group.message.ChatGroupMessageFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.group.message.ChatGroupMessageModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.list.ChatPrivateListFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.list.ChatPrivateListModule
-import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.message.ChatPrivateMessageFragment
-import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.message.ChatPrivateMessageModule
-import ru.itis.kpfu.corpchat.presentation.screen.news.edit.NewsEditFragment
-import ru.itis.kpfu.corpchat.presentation.screen.news.edit.NewsEditModule
-import ru.itis.kpfu.corpchat.presentation.screen.news.feed.NewsFeedFragment
-import ru.itis.kpfu.corpchat.presentation.screen.news.feed.NewsFeedModule
-import ru.itis.kpfu.corpchat.presentation.screen.news.info.NewsInfoFragment
-import ru.itis.kpfu.corpchat.presentation.screen.news.info.NewsInfoModule
+import ru.itis.kpfu.corpchat.presentation.screen.auth.company.industry.fragment.AuthCompanySignUpIndustryFragment
+import ru.itis.kpfu.corpchat.presentation.screen.auth.company.industry.viewmodel.AuthCompanySignUpIndustryModule
+import ru.itis.kpfu.corpchat.presentation.screen.auth.photo.fragment.AuthSignUpPhotoFragment
+import ru.itis.kpfu.corpchat.presentation.screen.auth.photo.viewmodel.AuthSignUpPhotoModule
+import ru.itis.kpfu.corpchat.presentation.screen.auth.company.name.fragment.AuthCompanySignUpNameFragment
+import ru.itis.kpfu.corpchat.presentation.screen.auth.company.name.viewmodel.AuthCompanySignUpNameModule
+import ru.itis.kpfu.corpchat.presentation.screen.auth.signin.fragment.AuthSignInFragment
+import ru.itis.kpfu.corpchat.presentation.screen.auth.signin.viewmodel.AuthSignInModule
+import ru.itis.kpfu.corpchat.presentation.screen.auth.user.fragment.AuthUserSignUpNameFragment
+import ru.itis.kpfu.corpchat.presentation.screen.auth.user.viewmodel.AuthUserSignUpNameModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.list.fragment.ChatChannelListFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.list.viewmodel.ChatChannelListModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.message.fragment.ChatChannelMessageFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.channel.message.viewmodel.ChatChannelMessageModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.contact.fragment.ChatContactListFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.contact.viewmodel.ChatContactListModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.group.list.fragment.ChatGroupListFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.group.list.viewmodel.ChatGroupListModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.group.message.fragment.ChatGroupMessageFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.group.message.viewmodel.ChatGroupMessageModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.list.fragment.ChatPrivateListFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.list.viewmodel.ChatPrivateListModule
+import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.message.fragment.ChatPrivateMessageFragment
+import ru.itis.kpfu.corpchat.presentation.screen.chat.privat.message.viewmodel.ChatPrivateMessageModule
+import ru.itis.kpfu.corpchat.presentation.screen.news.edit.fragment.NewsEditFragment
+import ru.itis.kpfu.corpchat.presentation.screen.news.edit.viewmodel.NewsEditModule
+import ru.itis.kpfu.corpchat.presentation.screen.news.feed.fragment.NewsFeedFragment
+import ru.itis.kpfu.corpchat.presentation.screen.news.feed.viewmodel.NewsFeedModule
+import ru.itis.kpfu.corpchat.presentation.screen.news.info.fragment.NewsInfoFragment
+import ru.itis.kpfu.corpchat.presentation.screen.news.info.viewmodel.NewsInfoModule
 
 @Module
 interface FeatureModule {
@@ -79,12 +77,8 @@ interface FeatureModule {
     fun contributeChatContactListFragment(): ChatContactListFragment
 
     @FeatureScope
-    @ContributesAndroidInjector(modules = [AuthUserSignUpModule::class])
-    fun contributeAuthUserSignUpFragment(): AuthUserSignUpFragment
-
-    @FeatureScope
-    @ContributesAndroidInjector(modules = [AuthEnterModule::class])
-    fun contributeAuthEnterFragment(): AuthEnterFragment
+    @ContributesAndroidInjector(modules = [AuthUserSignUpNameModule::class])
+    fun contributeAuthUserSignUpFragment(): AuthUserSignUpNameFragment
 
     @FeatureScope
     @ContributesAndroidInjector(modules = [AuthSignInModule::class])
@@ -95,8 +89,8 @@ interface FeatureModule {
     fun contributeAuthCompanySignUpNameFragment(): AuthCompanySignUpNameFragment
 
     @FeatureScope
-    @ContributesAndroidInjector(modules = [AuthCompanySignUpLogoModule::class])
-    fun contributeAuthCompanySignUpLogoFragment(): AuthCompanySignUpLogoFragment
+    @ContributesAndroidInjector(modules = [AuthSignUpPhotoModule::class])
+    fun contributeAuthCompanySignUpLogoFragment(): AuthSignUpPhotoFragment
 
     @FeatureScope
     @ContributesAndroidInjector(modules = [AuthCompanySignUpIndustryModule::class])

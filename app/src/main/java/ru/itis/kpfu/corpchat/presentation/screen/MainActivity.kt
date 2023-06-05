@@ -2,11 +2,26 @@ package ru.itis.kpfu.corpchat.presentation.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import ru.itis.kpfu.corpchat.R
+import ru.itis.kpfu.corpchat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private var binding: ActivityMainBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater).also {
+            setContentView(it.root)
+        }
+
+        val controller = (supportFragmentManager.findFragmentById(R.id.host_fragment) as NavHostFragment).navController
+
+        binding?.run {
+            bnvMenu.setupWithNavController(controller)
+        }
+
     }
 }
