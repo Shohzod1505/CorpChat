@@ -1,9 +1,10 @@
-package ru.itis.kpfu.corpchat.feature.news.presentation.info.fragment;
+package ru.itis.kpfu.corpchat.feature.news.presentation.info.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentNewsInfoBinding
@@ -11,7 +12,7 @@ import ru.itis.kpfu.corpchat.feature.news.presentation.info.viewmodel.NewsInfoVi
 import javax.inject.Inject
 
 class NewsInfoFragment : DaggerFragment(R.layout.fragment_news_info) {
-    private var binding: FragmentNewsInfoBinding? = null
+    private val binding by viewBinding(FragmentNewsInfoBinding::bind)
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -22,12 +23,10 @@ class NewsInfoFragment : DaggerFragment(R.layout.fragment_news_info) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentNewsInfoBinding.bind(view)
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        with(binding) {
+
+        }
     }
 
 }

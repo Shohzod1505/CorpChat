@@ -26,20 +26,16 @@
     <string name="auth_phone">Phone</string>
     <string name="auth_password">Password</string>
 
-    <string name="auth_industry_1" translatable="false">Industry #1</string>
-    <string name="auth_industry_2" translatable="false">Industry #2</string>
-    <string name="auth_industry_3" translatable="false">Industry #3</string>
-    <string name="auth_industry_4" translatable="false">Industry #4</string>
-    <string name="auth_industry_5" translatable="false">Industry #5</string>
-    <string name="auth_industry_6" translatable="false">Industry #6</string>
-    <string name="auth_industry_7" translatable="false">Industry #7</string>
-    <string name="auth_industry_8" translatable="false">Industry #8</string>
-    <string name="auth_industry_9" translatable="false">Industry #9</string>
-    <string name="auth_industry_10" translatable="false">Industry #10</string>
-    <string name="auth_industry_11" translatable="false">Industry #11</string>
-    <string name="auth_industry_12" translatable="false">Industry #12</string>
-    <string name="auth_industry_13" translatable="false">Industry #13</string>
-    <string name="auth_industry_14" translatable="false">Industry #14</string>
+    <string name="auth_industry_1" >Medicine</string>
+    <string name="auth_industry_2" >Education</string>
+    <string name="auth_industry_3" >Finance</string>
+    <string name="auth_industry_4" >Information technology</string>
+    <string name="auth_industry_5" >Tourism</string>
+    <string name="auth_industry_6" >Production and industry</string>
+    <string name="auth_industry_7" >Retail and sales</string>
+    <string name="auth_industry_8" >Agriculture</string>
+    <string name="auth_industry_9" >Art and culture</string>
+    <string name="auth_industry_10">Real estate and construction</string>
 
     <!--Label_News-->
     <!--Label_Work-->

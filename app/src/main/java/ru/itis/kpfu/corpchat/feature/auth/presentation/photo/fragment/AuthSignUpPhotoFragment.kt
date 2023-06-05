@@ -1,10 +1,11 @@
-package ru.itis.kpfu.corpchat.feature.auth.presentation.photo.fragment;
+package ru.itis.kpfu.corpchat.feature.auth.presentation.photo.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthSignUpPhotoBinding
@@ -12,7 +13,7 @@ import ru.itis.kpfu.corpchat.feature.auth.presentation.photo.viewmodel.AuthSignU
 import javax.inject.Inject
 
 class AuthSignUpPhotoFragment : DaggerFragment(R.layout.fragment_auth_sign_up_photo) {
-    private var binding: FragmentAuthSignUpPhotoBinding? = null
+    private val binding by viewBinding(FragmentAuthSignUpPhotoBinding::bind)
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -23,18 +24,12 @@ class AuthSignUpPhotoFragment : DaggerFragment(R.layout.fragment_auth_sign_up_ph
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAuthSignUpPhotoBinding.bind(view)
 
-        binding?.run {
+        with(binding) {
             btNext.setOnClickListener {
                 findNavController().navigate(R.id.action_authSignUpPhotoFragment_to_newsFeedFragment)
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
 }

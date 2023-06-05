@@ -3,8 +3,8 @@ package ru.itis.kpfu.corpchat.di
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import ru.itis.kpfu.homework.utils.ResourceProvider
-import ru.itis.kpfu.homework.utils.ResourceProviderImpl
+import ru.itis.kpfu.corpchat.utils.ResourceProvider
+import ru.itis.kpfu.corpchat.utils.ResourceProviderImpl
 
 @Module
 class AppModule {

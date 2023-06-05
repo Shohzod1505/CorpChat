@@ -1,9 +1,10 @@
-package ru.itis.kpfu.corpchat.feature.chat.presentation.group.message.fragment;
+package ru.itis.kpfu.corpchat.feature.chat.presentation.group.message.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentChatGroupMessageBinding
@@ -11,7 +12,7 @@ import ru.itis.kpfu.corpchat.feature.chat.presentation.group.message.viewmodel.C
 import javax.inject.Inject
 
 class ChatGroupMessageFragment : DaggerFragment(R.layout.fragment_chat_group_message) {
-    private var binding: FragmentChatGroupMessageBinding? = null
+    private val binding by viewBinding(FragmentChatGroupMessageBinding::bind)
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -22,12 +23,10 @@ class ChatGroupMessageFragment : DaggerFragment(R.layout.fragment_chat_group_mes
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentChatGroupMessageBinding.bind(view)
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        with(binding) {
+
+        }
     }
 
 }

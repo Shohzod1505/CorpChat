@@ -1,4 +1,4 @@
-package ru.itis.kpfu.homework.utils
+package ru.itis.kpfu.corpchat.utils
 
 import android.content.Context
 

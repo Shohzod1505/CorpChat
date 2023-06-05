@@ -1,9 +1,10 @@
-package ru.itis.kpfu.corpchat.feature.chat.presentation.privat.list.fragment;
+package ru.itis.kpfu.corpchat.feature.chat.presentation.privat.list.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentChatPrivateListBinding
@@ -11,7 +12,7 @@ import ru.itis.kpfu.corpchat.feature.chat.presentation.privat.list.viewmodel.Cha
 import javax.inject.Inject
 
 class ChatPrivateListFragment : DaggerFragment(R.layout.fragment_chat_private_list) {
-    private var binding: FragmentChatPrivateListBinding? = null
+    private val binding by viewBinding(FragmentChatPrivateListBinding::bind)
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -22,12 +23,10 @@ class ChatPrivateListFragment : DaggerFragment(R.layout.fragment_chat_private_li
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentChatPrivateListBinding.bind(view)
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        with(binding) {
+
+        }
     }
 
 }

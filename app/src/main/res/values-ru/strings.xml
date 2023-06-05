@@ -23,6 +23,16 @@
     <!--Label_Chat-->
 
     <!--Label_Profile-->
+    <string name="auth_industry_1">Медицина</string>
+    <string name="auth_industry_2">Образование</string>
+    <string name="auth_industry_3">Финансы</string>
+    <string name="auth_industry_4">Информационные технологии</string>
+    <string name="auth_industry_5">Туризм</string>
+    <string name="auth_industry_6">Производство и промышленность</string>
+    <string name="auth_industry_7">Розничная торговля и продажи</string>
+    <string name="auth_industry_8">Сельское хозяйство</string>
+    <string name="auth_industry_9">Искусство и культура</string>
+    <string name="auth_industry_10">Недвижимость и строительство</string>
     <string name="profile_phone_change">Сменить номер</string>
     <string name="profile_bio_change">Сменить описание</string>
     <string name="profile_name">Фамилия Имя</string>

@@ -1,4 +1,4 @@
-package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.fragment;
+package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -6,9 +6,9 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.ktx.Firebase
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
@@ -19,9 +19,8 @@ import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
 class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
-    private var binding: FragmentAuthSignInBinding? = null
+    private val binding by viewBinding(FragmentAuthSignInBinding::bind)
     private var auth: FirebaseAuth? = null
-    private var dbReference: DatabaseReference? = null
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -32,14 +31,13 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAuthSignInBinding.bind(view)
-
         auth = Firebase.auth
 
-        binding?.run {
+        with(binding) {
             val title = arguments?.getString("Title")
             val type = arguments?.getInt("Type")
             tvSignIn.text = title
+
             btSignIn.setOnClickListener {
                 val email = etEmail.getTextAsString()
                 val password = etPassword.getTextAsString()
@@ -60,6 +58,7 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
 
         }
     }
+
     private fun signIn(
         email: String,
         password: String,
@@ -91,14 +90,7 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
                     Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
                 }
             )
-
         }
-    }
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
 }

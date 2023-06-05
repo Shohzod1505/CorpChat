@@ -1,10 +1,11 @@
-package ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.fragment;
+package ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dagger.android.support.DaggerFragment
@@ -16,7 +17,7 @@ import java.util.HashMap
 import javax.inject.Inject
 
 class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_company_sign_up_name) {
-    private var binding: FragmentAuthCompanySignUpNameBinding? = null
+    private val binding by viewBinding(FragmentAuthCompanySignUpNameBinding::bind)
     private var dbReference: DatabaseReference? = null
 
     @Inject
@@ -28,9 +29,8 @@ class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_comp
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAuthCompanySignUpNameBinding.bind(view)
 
-        binding?.run {
+        with(binding) {
 
             val bundle = Bundle()
             val userId = arguments?.getString("companyId")
@@ -52,11 +52,6 @@ class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_comp
             }
         }
 
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
 }
