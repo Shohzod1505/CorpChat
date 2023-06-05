@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox1"
+        android:id="@+id/chB_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -30,85 +30,85 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_industry" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/chB_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox1"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+        app:layout_constraintStart_toStartOf="@+id/chB_1"
+        app:layout_constraintTop_toBottomOf="@+id/chB_1" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/chB_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_3"
-        app:layout_constraintStart_toStartOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintStart_toStartOf="@+id/chB_2"
+        app:layout_constraintTop_toBottomOf="@+id/chB_2" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/chB_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_4"
-        app:layout_constraintStart_toStartOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintStart_toStartOf="@+id/chB_3"
+        app:layout_constraintTop_toBottomOf="@+id/chB_3" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/chB_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_5"
-        app:layout_constraintStart_toStartOf="@+id/checkBox4"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintStart_toStartOf="@+id/chB_4"
+        app:layout_constraintTop_toBottomOf="@+id/chB_4" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/chB_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_6"
-        app:layout_constraintStart_toStartOf="@+id/checkBox5"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+        app:layout_constraintStart_toStartOf="@+id/chB_5"
+        app:layout_constraintTop_toBottomOf="@+id/chB_5" />
 
     <CheckBox
-        android:id="@+id/checkBox7"
+        android:id="@+id/chB_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_7"
-        app:layout_constraintStart_toStartOf="@+id/checkBox6"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+        app:layout_constraintStart_toStartOf="@+id/chB_6"
+        app:layout_constraintTop_toBottomOf="@+id/chB_6" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
+        android:id="@+id/chB_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_8"
-        app:layout_constraintStart_toStartOf="@+id/checkBox7"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
+        app:layout_constraintStart_toStartOf="@+id/chB_7"
+        app:layout_constraintTop_toBottomOf="@+id/chB_7" />
 
     <CheckBox
-        android:id="@+id/checkBox9"
+        android:id="@+id/chB_9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_9"
-        app:layout_constraintStart_toStartOf="@+id/checkBox8"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+        app:layout_constraintStart_toStartOf="@+id/chB_8"
+        app:layout_constraintTop_toBottomOf="@+id/chB_8" />
 
     <CheckBox
-        android:id="@+id/checkBox10"
+        android:id="@+id/chB_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/big_label_24"
         android:text="@string/auth_industry_10"
-        app:layout_constraintStart_toStartOf="@+id/checkBox9"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+        app:layout_constraintStart_toStartOf="@+id/chB_9"
+        app:layout_constraintTop_toBottomOf="@+id/chB_9" />
 
 <!--    <CheckBox-->
 <!--        android:id="@+id/checkBox11"-->

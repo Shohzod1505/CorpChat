@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authUserSignUpNameFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.user.fragment.AuthUserSignUpNameFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.user.fragment.AuthUserSignUpNameFragment"
         android:label="AuthUserSignUpNameFragment"
         tools:layout="@layout/fragment_auth_user_sign_up_name">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/authCompanySignUpNameFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.company.name.fragment.AuthCompanySignUpNameFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.fragment.AuthCompanySignUpNameFragment"
         android:label="AuthCompanySignUpNameFragment"
         tools:layout="@layout/fragment_auth_company_sign_up_name">
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/authCompanySignUpIndustryFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.company.industry.fragment.AuthCompanySignUpIndustryFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.company.industry.fragment.AuthCompanySignUpIndustryFragment"
         android:label="AuthCompanySignUpIndustryFragment"
         tools:layout="@layout/fragment_auth_company_sign_up_industry">
         <action
@@ -46,7 +46,7 @@
 
     <fragment
         android:id="@+id/authSignUpPhotoFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.photo.fragment.AuthSignUpPhotoFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.photo.fragment.AuthSignUpPhotoFragment"
         android:label="AuthSignUpPhotoFragment"
         tools:layout="@layout/fragment_auth_sign_up_photo">
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/authEnterFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.enter.AuthEnterFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.enter.AuthEnterFragment"
         android:label="AuthEnterFragment"
         tools:layout="@layout/fragment_auth_enter">
         <action
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/authSignInFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.auth.signin.fragment.AuthSignInFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.signin.fragment.AuthSignInFragment"
         android:label="AuthSignInFragment"
         tools:layout="@layout/fragment_auth_sign_in">
         <action
@@ -86,19 +86,19 @@
 
     <fragment
         android:id="@+id/chatContactListFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.chat.contact.fragment.ChatContactListFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.chat.presentation.contact.fragment.ChatContactListFragment"
         android:label="ChatContactListFragment"
         tools:layout="@layout/fragment_chat_contact_list">
     </fragment>
     <fragment
         android:id="@+id/newsFeedFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.news.feed.fragment.NewsFeedFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.news.presentation.feed.fragment.NewsFeedFragment"
         android:label="NewsFeedFragment"
         tools:layout="@layout/fragment_news_feed">
     </fragment>
     <fragment
         android:id="@+id/profileSettingFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.profile.ProfileSettingFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.profile.presentation.ProfileSettingFragment"
         android:label="ProfileSettingFragment"
         tools:layout="@layout/fragment_profile_setting">
         <action
@@ -107,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/workFragment"
-        android:name="ru.itis.kpfu.corpchat.presentation.screen.work.WorkFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.work.presentation.WorkFragment"
         android:label="WorkFragment"
         tools:layout="@layout/fragment_work">
     </fragment>
