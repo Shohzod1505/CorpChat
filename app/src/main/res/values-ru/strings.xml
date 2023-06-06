@@ -59,5 +59,6 @@
     <string name="auth_last_name">Фамилия</string>
     <string name="auth_title_user_sign_up_name">Заполните информацию о себе</string>
     <string name="auth_title_exist_sign_in">Войти в свой аккаунт</string>
+    <string name="auth_company_code">Код компании</string>
 
 </resources>

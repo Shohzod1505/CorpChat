@@ -1,11 +1,14 @@
 package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import ru.itis.kpfu.corpchat.utils.checkEmpty
+import ru.itis.kpfu.corpchat.utils.generatePassword
 import javax.inject.Inject
 
 class AuthSignInViewModel @Inject constructor(
@@ -15,39 +18,55 @@ class AuthSignInViewModel @Inject constructor(
 
     private var dbReference: DatabaseReference? = null
 
-    fun registerUser(
+    private val _arraySignIn = MutableLiveData<Array<String>>()
+    val arraySignIn: LiveData<Array<String>>
+        get() = _arraySignIn
+
+    fun signInExistAccount(
+        email: String,
+        password: String,
+    ) {
+        auth.signInWithEmailAndPassword(email, password)
+    }
+
+    fun signIn(
         email: String,
         password: String,
         type: String,
-        onSuccess: (userId: String) -> Unit,
-        onError: (String) -> Unit,
+    ) {
+        if (email.checkEmpty("Email is required") &&
+            password.checkEmpty("Password is required")) {
+            registerUser(email, password, type)
+        }
+    }
+
+    private fun registerUser(
+        email: String,
+        password: String,
+        type: String,
     ) {
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
                     val user = auth.currentUser
                     if (user != null) {
                         val userId = user.uid
+                        val hashMap: HashMap<String, String> = HashMap()
                         dbReference = firebaseDatabase.getReference(type).child(userId)
 
-                        val hashMap: HashMap<String, String> = HashMap()
                         if (type == "User") {
                             hashMap["userId"] = userId
-                        } else {
+                            _arraySignIn.value = arrayOf(type, userId)
+
+                        } else if (type == "Company") {
+                            hashMap["companyCode"] = generatePassword(8)
                             hashMap["companyId"] = userId
+                            _arraySignIn.value = arrayOf(type, userId)
                         }
                         hashMap["email"] = email
                         hashMap["password"] = password
 
-                        dbReference?.setValue(hashMap)?.addOnCompleteListener { dbTask ->
-                            if (dbTask.isSuccessful) {
-                                onSuccess(userId)
-                            } else {
-                                onError(dbTask.exception?.message ?: "Failed to create user")
-                            }
-                        }
-                    } else {
-                        onError(task.exception?.message ?: "Failed to create user")
+                        dbReference?.setValue(hashMap)
                     }
                 }
             }

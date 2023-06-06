@@ -81,7 +81,7 @@
             app:argType="string" />
         <argument
             android:name="Type"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
 
     <fragment

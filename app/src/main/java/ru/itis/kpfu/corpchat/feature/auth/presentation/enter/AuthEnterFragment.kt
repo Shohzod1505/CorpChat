@@ -21,22 +21,22 @@ class AuthEnterFragment : Fragment(R.layout.fragment_auth_enter) {
         with(binding) {
 
             btUser.setOnClickListener {
-                navigate(R.string.auth_title_user_sign_in, 0)
+                navigate(R.string.auth_title_user_sign_in, "User")
             }
             btCompany.setOnClickListener {
-                navigate(R.string.auth_title_company_sign_in, 1)
+                navigate(R.string.auth_title_company_sign_in, "Company")
             }
             btEnter.setOnClickListener {
-                navigate(R.string.auth_title_exist_sign_in, 2)
+                navigate(R.string.auth_title_exist_sign_in, "Exist")
             }
         }
     }
 
-    private fun navigate(title: Int, type: Int) {
+    private fun navigate(title: Int, type: String) {
         val bundle = Bundle()
         val text = context?.getString(title)
         bundle.putString("Title", text)
-        bundle.putInt("Type", type)
+        bundle.putString("Type", type)
         findNavController().navigate(
             R.id.action_authEnterFragment_to_authSignInFragment,
             bundle
