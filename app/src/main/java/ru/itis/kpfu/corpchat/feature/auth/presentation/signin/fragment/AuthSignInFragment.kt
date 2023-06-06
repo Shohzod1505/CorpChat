@@ -5,11 +5,15 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthSignInBinding
 import ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel.AuthSignInViewModel
+import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
@@ -35,16 +39,21 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
             btSignIn.setOnClickListener {
                 val email = etEmail.getTextAsString()
                 val password = etPassword.getTextAsString()
-                when(type) {
-                    "User" -> {
-                        viewModel.signIn(email, password, type)
-                    }
-                    "Company" -> {
-                        viewModel.signIn(email, password, type)
-                    }
-                    "Exist" -> {
-                        viewModel.signInExistAccount(email, password)
-                        findNavController().navigate(R.id.action_authSignInFragment_to_newsFeedFragment)
+
+                val emailIsEmpty = etEmail.checkField("Enter email")
+                val passwordIsEmpty = etPassword.checkField("Enter password")
+                if (emailIsEmpty && passwordIsEmpty) {
+                    when(type) {
+                        "User" -> {
+                            viewModel.signIn(email, password, type)
+                        }
+                        "Company" -> {
+                            viewModel.signIn(email, password, type)
+                        }
+                        "Exist" -> {
+                            viewModel.signInExistAccount(email, password)
+                            findNavController().navigate(R.id.action_authSignInFragment_to_newsFeedFragment)
+                        }
                     }
                 }
             }

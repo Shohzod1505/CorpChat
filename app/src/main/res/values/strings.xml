@@ -38,6 +38,8 @@
     <string name="auth_industry_9" >Art and culture</string>
     <string name="auth_industry_10">Real estate and construction</string>
 
+    <string name="error_signUp">*This field is required</string>
+
     <!--Label_News-->
     <!--Label_Work-->
     <!--Label_Chat-->

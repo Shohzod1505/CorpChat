@@ -1,13 +1,14 @@
 package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import androidx.lifecycle.viewmodel.CreationExtras
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import ru.itis.kpfu.corpchat.utils.checkEmpty
+import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.generatePassword
 import javax.inject.Inject
 

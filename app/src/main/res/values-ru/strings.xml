@@ -33,6 +33,7 @@
     <string name="auth_industry_8">Сельское хозяйство</string>
     <string name="auth_industry_9">Искусство и культура</string>
     <string name="auth_industry_10">Недвижимость и строительство</string>
+    <string name="error_signUp">*Обязательное поле</string>
     <string name="profile_phone_change">Сменить номер</string>
     <string name="profile_bio_change">Сменить описание</string>
     <string name="profile_name">Фамилия Имя</string>

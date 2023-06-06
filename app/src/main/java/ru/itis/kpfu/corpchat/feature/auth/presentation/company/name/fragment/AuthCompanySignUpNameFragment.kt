@@ -10,6 +10,7 @@ import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthCompanySignUpNameBinding
 import ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.viewmodel.AuthCompanySignUpNameViewModel
+import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
@@ -35,11 +36,18 @@ class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_comp
                 val name = etName.getTextAsString()
                 val address = etAddress.getTextAsString()
                 val phone = etPhone.getTextAsString()
-                viewModel.updateCompany(companyId, name, address, phone)
-                findNavController().navigate(
-                    R.id.action_authCompanySignUpNameFragment_to_authCompanySignUpIndustryFragment,
-                    bundle
-                )
+
+                val error = context?.getString(R.string.error_signUp).toString()
+                val nameIsEmpty = etName.checkField(error)
+                val addressIsEmpty = etAddress.checkField(error)
+                val phoneIsEmpty = etPhone.checkField(error)
+                if (nameIsEmpty && addressIsEmpty && phoneIsEmpty) {
+                    viewModel.updateCompany(companyId, name, address, phone)
+                    findNavController().navigate(
+                        R.id.action_authCompanySignUpNameFragment_to_authCompanySignUpIndustryFragment,
+                        bundle
+                    )
+                }
             }
         }
 

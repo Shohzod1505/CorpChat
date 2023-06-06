@@ -7,13 +7,8 @@
     <TextView
         android:id="@+id/tv_sign_in"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        style="@style/MyTitle"
         android:text="@string/auth_title_company_sign_up_name"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_36"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,54 +21,54 @@
         app:layout_constraintStart_toEndOf="@+id/tv_sign_in"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/auth_name"
+        android:layout_marginTop="36dp"
+        style="@style/MyTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/MyTextInputEditText"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/auth_address"
+        style="@style/MyTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_name">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/MyTextInputEditText"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/auth_phone"
+        style="@style/MyTextInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+        app:layout_constraintTop_toBottomOf="@+id/et_address">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/MyTextInputEditText"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/bt_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textAllCaps="false"
+        style="@style/MyButton"
         android:text="@string/bt_next_step"
-        android:textStyle="bold"
-        android:textSize="@dimen/big_label_24"
-        android:background="@drawable/shape_radius_32"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

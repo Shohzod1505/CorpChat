@@ -7,12 +7,9 @@
     <TextView
         android:id="@+id/tv_logo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        style="@style/MyTitle"
+        android:layout_marginStart="0dp"
         android:text="@string/auth_title_sign_up_logo"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_36"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,16 +28,8 @@
 
     <Button
         android:id="@+id/bt_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textAllCaps="false"
+        style="@style/MyButton"
         android:text="@string/bt_next_step"
-        android:textStyle="bold"
-        android:textSize="@dimen/big_label_24"
-        android:background="@drawable/shape_radius_32"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

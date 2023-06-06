@@ -8,156 +8,87 @@
     <TextView
         android:id="@+id/tv_industry"
         android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        style="@style/MyTitle"
         android:text="@string/auth_title_company_sign_up_industry"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_36"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/chB_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:layout_marginStart="24dp"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_industry" />
 
     <CheckBox
         android:id="@+id/chB_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_2"
         app:layout_constraintStart_toStartOf="@+id/chB_1"
         app:layout_constraintTop_toBottomOf="@+id/chB_1" />
 
     <CheckBox
         android:id="@+id/chB_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_3"
         app:layout_constraintStart_toStartOf="@+id/chB_2"
         app:layout_constraintTop_toBottomOf="@+id/chB_2" />
 
     <CheckBox
         android:id="@+id/chB_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_4"
         app:layout_constraintStart_toStartOf="@+id/chB_3"
         app:layout_constraintTop_toBottomOf="@+id/chB_3" />
 
     <CheckBox
         android:id="@+id/chB_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_5"
         app:layout_constraintStart_toStartOf="@+id/chB_4"
         app:layout_constraintTop_toBottomOf="@+id/chB_4" />
 
     <CheckBox
         android:id="@+id/chB_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_6"
         app:layout_constraintStart_toStartOf="@+id/chB_5"
         app:layout_constraintTop_toBottomOf="@+id/chB_5" />
 
     <CheckBox
         android:id="@+id/chB_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_7"
         app:layout_constraintStart_toStartOf="@+id/chB_6"
         app:layout_constraintTop_toBottomOf="@+id/chB_6" />
 
     <CheckBox
         android:id="@+id/chB_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_8"
         app:layout_constraintStart_toStartOf="@+id/chB_7"
         app:layout_constraintTop_toBottomOf="@+id/chB_7" />
 
     <CheckBox
         android:id="@+id/chB_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_9"
         app:layout_constraintStart_toStartOf="@+id/chB_8"
         app:layout_constraintTop_toBottomOf="@+id/chB_8" />
 
     <CheckBox
         android:id="@+id/chB_10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/big_label_24"
+        style="@style/MyCheckBox"
         android:text="@string/auth_industry_10"
         app:layout_constraintStart_toStartOf="@+id/chB_9"
         app:layout_constraintTop_toBottomOf="@+id/chB_9" />
 
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox11"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="@dimen/big_label_24"-->
-<!--        android:text="@string/auth_industry_11"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/checkBox10"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/checkBox10" />-->
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox12"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="@dimen/big_label_24"-->
-<!--        android:text="@string/auth_industry_12"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/checkBox11"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/checkBox11" />-->
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox13"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="@dimen/big_label_24"-->
-<!--        android:text="@string/auth_industry_13"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/checkBox12"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/checkBox12" />-->
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox14"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="@dimen/big_label_24"-->
-<!--        android:text="@string/auth_industry_14"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/checkBox13"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/checkBox13" />-->
-
     <Button
         android:id="@+id/bt_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textAllCaps="false"
+        style="@style/MyButton"
         android:text="@string/bt_next_step"
-        android:textStyle="bold"
-        android:textSize="@dimen/big_label_24"
-        android:background="@drawable/shape_radius_32"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
