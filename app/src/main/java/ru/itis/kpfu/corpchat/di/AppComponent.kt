@@ -12,6 +12,8 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ViewModelModule::class,
         FeatureModule::class,
+        AppModule::class,
+        FireBaseModule::class,
     ]
 )
 @Singleton
