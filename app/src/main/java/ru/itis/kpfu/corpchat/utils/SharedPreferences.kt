@@ -5,4 +5,5 @@ object SharedPreferences {
     const val PREF_COMPANY_ID = "PREF_COMPANY_ID"
     const val PREF_USER_ID = "PREF_USER_ID"
     const val PREF_EMAIL = "PREF_EMAIL"
+    const val ITEM_BINDING = "ITEM_BINDING"
 }

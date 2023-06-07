@@ -47,6 +47,7 @@ class AuthSignUpPhotoFragment : DaggerFragment(R.layout.fragment_auth_sign_up_ph
         preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 
         hide(R.id.bnv_menu)
+        hide(R.id.toolbar)
 
         with(binding) {
             val companyId = preferences?.getString(PREF_COMPANY_ID, null)

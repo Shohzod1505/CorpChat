@@ -113,6 +113,9 @@
         android:name="ru.itis.kpfu.corpchat.feature.chat.presentation.contact.fragment.ChatContactListFragment"
         android:label="ChatContactListFragment"
         tools:layout="@layout/fragment_chat_contact_list">
+        <action
+            android:id="@+id/action_chatContactListFragment_to_chatPrivateListFragment"
+            app:destination="@id/chatPrivateListFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsFeedFragment"
@@ -128,6 +131,12 @@
         <argument
             android:name="userId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_newsFeedFragment_to_newsEditFragment"
+            app:destination="@id/newsEditFragment" />
+        <action
+            android:id="@+id/action_newsFeedFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileSettingFragment"
@@ -143,6 +152,44 @@
         android:name="ru.itis.kpfu.corpchat.feature.work.presentation.WorkFragment"
         android:label="WorkFragment"
         tools:layout="@layout/fragment_work">
+    </fragment>
+    <fragment
+        android:id="@+id/newsEditFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.news.presentation.edit.fragment.NewsEditFragment"
+        android:label="NewsEditFragment" >
+        <action
+            android:id="@+id/action_newsEditFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsInfoFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.news.presentation.info.fragment.NewsInfoFragment"
+        android:label="NewsInfoFragment" >
+        <action
+            android:id="@+id/action_newsInfoFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+        <argument
+            android:name="newsId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatPrivateListFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.chat.presentation.privat.list.fragment.ChatPrivateListFragment"
+        android:label="ChatPrivateListFragment" >
+        <action
+            android:id="@+id/action_chatPrivateListFragment_to_chatPrivateMessageFragment"
+            app:destination="@id/chatPrivateMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatPrivateMessageFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.chat.presentation.privat.message.fragment.ChatPrivateMessageFragment"
+        android:label="ChatPrivateMessageFragment" >
+        <action
+            android:id="@+id/action_chatPrivateMessageFragment_to_chatContactListFragment"
+            app:destination="@id/chatContactListFragment" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

@@ -32,6 +32,7 @@ class AuthEnterFragment : DaggerFragment(R.layout.fragment_auth_enter) {
         }
 
         hide(R.id.bnv_menu)
+        hide(R.id.toolbar)
 
         with(binding) {
 

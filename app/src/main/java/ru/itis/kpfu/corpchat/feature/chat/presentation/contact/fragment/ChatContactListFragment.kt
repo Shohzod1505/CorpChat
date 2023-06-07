@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
@@ -25,7 +26,7 @@ class ChatContactListFragment : DaggerFragment(R.layout.fragment_chat_contact_li
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-
+            findNavController().navigate(R.id.action_chatContactListFragment_to_chatPrivateListFragment)
         }
     }
 
