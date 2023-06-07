@@ -8,8 +8,10 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import ru.itis.kpfu.corpchat.feature.news.presentation.info.viewmodel.NewsInfoViewModel
+import ru.itis.kpfu.corpchat.feature.news.domain.NewsInfo
+import java.util.*
 import javax.inject.Inject
+
 
 class NewsFeedViewModel @Inject constructor(
     private val firebaseStorage: FirebaseStorage,
@@ -22,6 +24,48 @@ class NewsFeedViewModel @Inject constructor(
     private val _url = MutableLiveData<String>()
     val url: LiveData<String>
         get() = _url
+
+    private val _list = MutableLiveData<ArrayList<NewsInfo>>()
+    val list: LiveData<ArrayList<NewsInfo>>
+        get() = _list
+
+    fun getList() {
+        dbReference = firebaseDatabase.getReference("News")
+        val query = dbReference?.orderByChild("timestamp")?.limitToLast(15)
+
+        query?.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val newsList: ArrayList<NewsInfo> = ArrayList()
+                for (snapshot in dataSnapshot.children) {
+                    val news: NewsInfo = snapshot.getValue(NewsInfo::class.java)!!
+                    newsList.add(news)
+                    _list.value = newsList
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
+
+    }
+
+//    private fun dateFormat(
+//
+//    ) {
+//        dbReference = firebaseDatabase.getReference("News").child("")
+//        dbReference?.addListenerForSingleValueEvent(object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                val timestamp = snapshot.child("timestamp").value as Long
+//                val date = Date(timestamp)
+//                val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.getDefault())
+//                val dateString = dateFormat.format(date)
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                // Обработка ошибок
+//            }
+//        })
+//    }
+
 
     fun findId(
         email: String,
@@ -67,13 +111,16 @@ class NewsFeedViewModel @Inject constructor(
 
     companion object {
 
-        val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
+        fun factory(
+            firebaseStorage: FirebaseStorage,
+            firebaseDatabase: FirebaseDatabase,
+        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")
             override fun <T : ViewModel> create(
                 modelClass: Class<T>,
-                extras: CreationExtras
+                extras: CreationExtras,
             ): T {
-                return NewsInfoViewModel() as T
+                return NewsFeedViewModel(firebaseStorage, firebaseDatabase) as T
             }
         }
     }

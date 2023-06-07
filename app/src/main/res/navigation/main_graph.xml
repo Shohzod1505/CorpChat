@@ -128,6 +128,12 @@
         <argument
             android:name="userId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_newsFeedFragment_to_newsEditFragment"
+            app:destination="@id/newsEditFragment" />
+        <action
+            android:id="@+id/action_newsFeedFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileSettingFragment"
@@ -143,6 +149,25 @@
         android:name="ru.itis.kpfu.corpchat.feature.work.presentation.WorkFragment"
         android:label="WorkFragment"
         tools:layout="@layout/fragment_work">
+    </fragment>
+    <fragment
+        android:id="@+id/newsEditFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.news.presentation.edit.fragment.NewsEditFragment"
+        android:label="NewsEditFragment" >
+        <action
+            android:id="@+id/action_newsEditFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsInfoFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.news.presentation.info.fragment.NewsInfoFragment"
+        android:label="NewsInfoFragment" >
+        <action
+            android:id="@+id/action_newsInfoFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
+        <argument
+            android:name="newsId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

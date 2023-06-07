@@ -3,6 +3,8 @@
     <!--Button-->
     <string name="bt_done">Готово</string>
     <string name="bt_next_step">Далее</string>
+    <string name="news_text">Текст</string>
+    <string name="news_title">Заголовок</string>
     <string name="bt_sign_in">Войти</string>
 
     <!--Label_Auth-->
@@ -61,5 +63,6 @@
     <string name="auth_title_user_sign_up_name">Заполните информацию о себе</string>
     <string name="auth_title_exist_sign_in">Войти в свой аккаунт</string>
     <string name="auth_company_code">Код компании</string>
+    <string name="bt_share">Опубликовать</string>
 
 </resources>

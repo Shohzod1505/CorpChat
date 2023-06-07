@@ -5,6 +5,7 @@
     <string name="bt_done">Done</string>
     <string name="bt_next_step">Next step</string>
     <string name="bt_sign_in">Sign In</string>
+    <string name="bt_share">Share</string>
 
     <!--Label_Auth-->
     <string name="auth_user">User</string>
@@ -41,6 +42,10 @@
     <string name="error_signUp">*This field is required</string>
 
     <!--Label_News-->
+
+    <string name="news_text">Text</string>
+    <string name="news_title">Title</string>
+
     <!--Label_Work-->
     <!--Label_Chat-->
 
