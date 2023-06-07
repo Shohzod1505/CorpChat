@@ -1,5 +1,7 @@
 package ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -10,12 +12,16 @@ import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthCompanySignUpNameBinding
 import ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.viewmodel.AuthCompanySignUpNameViewModel
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.APP_PREFERENCES
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_COMPANY_ID
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_EMAIL
 import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
 class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_company_sign_up_name) {
     private val binding by viewBinding(FragmentAuthCompanySignUpNameBinding::bind)
+    private var preferences: SharedPreferences? = null
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -26,11 +32,12 @@ class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_comp
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 
         with(binding) {
-            val bundle = Bundle()
-            val companyId = arguments?.getString("companyId")
-            bundle.putString("companyId", companyId)
+
+            val companyId = preferences?.getString(PREF_COMPANY_ID, "error")
+            val email = preferences?.getString(PREF_EMAIL, "error")
 
             btNext.setOnClickListener {
                 val name = etName.getTextAsString()
@@ -43,10 +50,7 @@ class AuthCompanySignUpNameFragment : DaggerFragment(R.layout.fragment_auth_comp
                 val phoneIsEmpty = etPhone.checkField(error)
                 if (nameIsEmpty && addressIsEmpty && phoneIsEmpty) {
                     viewModel.updateCompany(companyId, name, address, phone)
-                    findNavController().navigate(
-                        R.id.action_authCompanySignUpNameFragment_to_authCompanySignUpIndustryFragment,
-                        bundle
-                    )
+                    findNavController().navigate(R.id.action_authCompanySignUpNameFragment_to_authCompanySignUpIndustryFragment,)
                 }
             }
         }

@@ -1,24 +1,29 @@
 package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.edit
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.android.support.DaggerFragment
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthSignInBinding
 import ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel.AuthSignInViewModel
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.APP_PREFERENCES
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_COMPANY_ID
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_EMAIL
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_USER_ID
 import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
 class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
     private val binding by viewBinding(FragmentAuthSignInBinding::bind)
+    private var preferences: SharedPreferences? = null
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -29,6 +34,7 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
         observeViewModel()
 
         with(binding) {
@@ -52,8 +58,11 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
                         }
                         "Exist" -> {
                             viewModel.signInExistAccount(email, password)
-                            findNavController().navigate(R.id.action_authSignInFragment_to_newsFeedFragment)
                         }
+                    }
+                    preferences?.edit {
+                        putString(PREF_EMAIL, email)
+                        commit()
                     }
                 }
             }
@@ -64,30 +73,56 @@ class AuthSignInFragment : DaggerFragment(R.layout.fragment_auth_sign_in) {
     private fun observeViewModel() {
         with(viewModel) {
             arraySignIn.observe(viewLifecycleOwner) {
-                navigate(it[0], it[1])
+                navigate(it[0], it[1], it[2])
+            }
+            companyId.observe(viewLifecycleOwner) {
+                navigateCompany(it)
+            }
+            userId.observe(viewLifecycleOwner) {
+                navigateUser(it)
             }
         }
+    }
+
+    private fun navigateCompany(
+        id: String,
+    ) {
+        preferences?.edit {
+            putString(PREF_COMPANY_ID, id)
+            commit()
+        }
+        findNavController().navigate(R.id.action_authSignInFragment_to_newsFeedFragment)
+    }
+
+    private fun navigateUser(
+        id: String,
+    ) {
+        preferences?.edit {
+            putString(PREF_USER_ID, id)
+            commit()
+        }
+        findNavController().navigate(R.id.action_authSignInFragment_to_newsFeedFragment)
     }
 
     private fun navigate(
         type: String,
         id: String,
+        email: String,
     ) {
-        val bundle = Bundle()
         when (type) {
             "User" -> {
-                bundle.putString("userId", id)
-                findNavController().navigate(
-                    R.id.action_authSignInFragment_to_authUserSignUpNameFragment,
-                    bundle
-                )
+                preferences?.edit {
+                    putString(PREF_USER_ID, id)
+                    commit()
+                }
+                findNavController().navigate(R.id.action_authSignInFragment_to_authUserSignUpNameFragment)
             }
             "Company" -> {
-                bundle.putString("companyId", id)
-                findNavController().navigate(
-                    R.id.action_authSignInFragment_to_authCompanySignUpNameFragment,
-                    bundle
-                )
+                preferences?.edit {
+                    putString(PREF_COMPANY_ID, id)
+                    commit()
+                }
+                findNavController().navigate(R.id.action_authSignInFragment_to_authCompanySignUpNameFragment)
             }
         }
     }

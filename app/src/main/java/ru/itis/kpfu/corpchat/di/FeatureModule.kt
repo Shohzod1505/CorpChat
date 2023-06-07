@@ -8,6 +8,8 @@ import ru.itis.kpfu.corpchat.feature.auth.presentation.photo.fragment.AuthSignUp
 import ru.itis.kpfu.corpchat.feature.auth.presentation.photo.viewmodel.AuthSignUpPhotoModule
 import ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.fragment.AuthCompanySignUpNameFragment
 import ru.itis.kpfu.corpchat.feature.auth.presentation.company.name.viewmodel.AuthCompanySignUpNameModule
+import ru.itis.kpfu.corpchat.feature.auth.presentation.enter.fragment.AuthEnterFragment
+import ru.itis.kpfu.corpchat.feature.auth.presentation.enter.viewmodel.AuthEnterModule
 import ru.itis.kpfu.corpchat.feature.auth.presentation.signin.fragment.AuthSignInFragment
 import ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel.AuthSignInModule
 import ru.itis.kpfu.corpchat.feature.auth.presentation.user.fragment.AuthUserSignUpNameFragment
@@ -90,7 +92,11 @@ interface FeatureModule {
 
     @FeatureScope
     @ContributesAndroidInjector(modules = [AuthSignUpPhotoModule::class])
-    fun contributeAuthCompanySignUpLogoFragment(): AuthSignUpPhotoFragment
+    fun contributeAuthSignUpPhotoFragment(): AuthSignUpPhotoFragment
+
+    @FeatureScope
+    @ContributesAndroidInjector(modules = [AuthEnterModule::class])
+    fun contributeAuthEnterFragment(): AuthEnterFragment
 
     @FeatureScope
     @ContributesAndroidInjector(modules = [AuthCompanySignUpIndustryModule::class])

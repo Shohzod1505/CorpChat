@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
     
     <ImageView
-        android:id="@+id/bt_add_logo"
+        android:id="@+id/ivbt_add_logo"
         android:layout_width="360dp"
         android:layout_height="360dp"
         android:padding="60dp"

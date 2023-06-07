@@ -2,13 +2,9 @@ package ru.itis.kpfu.corpchat.feature.auth.presentation.signin.viewmodel
 
 import androidx.lifecycle.*
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import ru.itis.kpfu.corpchat.utils.checkEmpty
-import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.generatePassword
 import javax.inject.Inject
 
@@ -23,11 +19,20 @@ class AuthSignInViewModel @Inject constructor(
     val arraySignIn: LiveData<Array<String>>
         get() = _arraySignIn
 
+    private val _companyId = MutableLiveData<String>()
+    val companyId: LiveData<String>
+        get() = _companyId
+
+    private val _userId = MutableLiveData<String>()
+    val userId: LiveData<String>
+        get() = _userId
+
     fun signInExistAccount(
         email: String,
         password: String,
     ) {
         auth.signInWithEmailAndPassword(email, password)
+        findId(email)
     }
 
     fun signIn(
@@ -38,6 +43,37 @@ class AuthSignInViewModel @Inject constructor(
         if (email.checkEmpty("Email is required") &&
             password.checkEmpty("Password is required")) {
             registerUser(email, password, type)
+        }
+    }
+
+    private fun findId(
+        email: String,
+    ) {
+        dbReference = firebaseDatabase.reference
+        dbReference?.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                searchForEmail(snapshot, email)
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+    }
+
+    private fun searchForEmail(snapshot: DataSnapshot, email: String) {
+        for (ds in snapshot.children) {
+            if (ds.child("email").getValue(String::class.java) == email) {
+                if (ds.child("companyId").exists()) {
+                    val companyId = ds.child("companyId").getValue(String::class.java).toString()
+                    _companyId.value = companyId
+                    return
+                }
+                if (ds.child("userId").exists()) {
+                    val userId = ds.child("userId").getValue(String::class.java).toString()
+                    _userId.value = userId
+                    return
+                }
+            }
+            searchForEmail(ds, email)
         }
     }
 
@@ -57,15 +93,16 @@ class AuthSignInViewModel @Inject constructor(
 
                         if (type == "User") {
                             hashMap["userId"] = userId
-                            _arraySignIn.value = arrayOf(type, userId)
+                            _arraySignIn.value = arrayOf(type, userId, email)
 
                         } else if (type == "Company") {
                             hashMap["companyCode"] = generatePassword(8)
                             hashMap["companyId"] = userId
-                            _arraySignIn.value = arrayOf(type, userId)
+                            _arraySignIn.value = arrayOf(type, userId, email)
                         }
                         hashMap["email"] = email
                         hashMap["password"] = password
+                        hashMap["image"] = ""
 
                         dbReference?.setValue(hashMap)
                     }

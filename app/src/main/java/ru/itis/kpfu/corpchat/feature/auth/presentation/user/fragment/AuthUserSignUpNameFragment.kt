@@ -1,5 +1,7 @@
 package ru.itis.kpfu.corpchat.feature.auth.presentation.user.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -10,12 +12,16 @@ import dagger.android.support.DaggerFragment
 import ru.itis.kpfu.corpchat.R
 import ru.itis.kpfu.corpchat.databinding.FragmentAuthUserSignUpNameBinding
 import ru.itis.kpfu.corpchat.feature.auth.presentation.user.viewmodel.AuthUserSignUpNameViewModel
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.APP_PREFERENCES
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_EMAIL
+import ru.itis.kpfu.corpchat.utils.SharedPreferences.PREF_USER_ID
 import ru.itis.kpfu.corpchat.utils.checkField
 import ru.itis.kpfu.corpchat.utils.getTextAsString
 import javax.inject.Inject
 
 class AuthUserSignUpNameFragment : DaggerFragment(R.layout.fragment_auth_user_sign_up_name) {
     private val binding by viewBinding(FragmentAuthUserSignUpNameBinding::bind)
+    private var preferences: SharedPreferences? = null
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -26,9 +32,12 @@ class AuthUserSignUpNameFragment : DaggerFragment(R.layout.fragment_auth_user_si
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 
         with(binding) {
-            val userId = arguments?.getString("userId")
+
+            val userId = preferences?.getString(PREF_USER_ID, "error")
+            val email = preferences?.getString(PREF_EMAIL, "error")
 
             btNext.setOnClickListener {
                 val name = etName.getTextAsString()

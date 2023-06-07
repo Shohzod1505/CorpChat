@@ -16,6 +16,9 @@
         <argument
             android:name="userId"
             app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -29,6 +32,9 @@
         <argument
             android:name="companyId"
             app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/authCompanySignUpIndustryFragment"
@@ -41,6 +47,9 @@
         <argument
             android:name="companyId"
             app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
 
 
@@ -52,15 +61,30 @@
         <action
             android:id="@+id/action_authSignUpPhotoFragment_to_newsFeedFragment"
             app:destination="@id/newsFeedFragment" />
+        <action
+            android:id="@+id/action_authSignUpPhotoFragment_to_authEnterFragment"
+            app:destination="@id/authEnterFragment" />
+        <argument
+            android:name="companyId"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/authEnterFragment"
-        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.enter.AuthEnterFragment"
+        android:name="ru.itis.kpfu.corpchat.feature.auth.presentation.enter.fragment.AuthEnterFragment"
         android:label="AuthEnterFragment"
         tools:layout="@layout/fragment_auth_enter">
         <action
             android:id="@+id/action_authEnterFragment_to_authSignInFragment"
             app:destination="@id/authSignInFragment" />
+        <action
+            android:id="@+id/action_authEnterFragment_to_newsFeedFragment"
+            app:destination="@id/newsFeedFragment" />
     </fragment>
     <fragment
         android:id="@+id/authSignInFragment"
@@ -95,6 +119,15 @@
         android:name="ru.itis.kpfu.corpchat.feature.news.presentation.feed.fragment.NewsFeedFragment"
         android:label="NewsFeedFragment"
         tools:layout="@layout/fragment_news_feed">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="companyId"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/profileSettingFragment"
