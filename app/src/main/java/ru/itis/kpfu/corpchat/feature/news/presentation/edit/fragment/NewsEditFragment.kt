@@ -42,6 +42,10 @@ class NewsEditFragment : DaggerFragment(R.layout.fragment_news_edit) {
         preferences = requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 
         with(binding) {
+
+                findNavController().navigate(R.id.action_authEnterFragment_to_authSignInFragmet)
+
+
             val userId = preferences?.getString(PREF_USER_ID, null)
 
             ivbtAddNews.setOnClickListener {
